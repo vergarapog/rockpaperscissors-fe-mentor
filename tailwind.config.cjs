@@ -11,10 +11,9 @@ module.exports = {
       colors: {
         bgGradientLeft: "hsl(214, 47%, 23%)",
         bgGradientRight: "hsl(237, 49%, 15%)",
-        darkelement: "hsl(209, 23%, 22%)",
-        lightbg: "hsl(0, 0%, 98%)",
-        lighttext: "hsl(200, 15%, 8%)",
-        lightelement: "hsl(0, 0%, 100%)",
+        darkText: "hsl(229, 25%, 31%)",
+        scoreText: "hsl(229, 64%, 46%)",
+        headerOutline: "hsl(217, 16%, 45%)",
       },
       fontFamily: {
         barlow: ["Barlow Semi Condensed", "sans-serif"],
