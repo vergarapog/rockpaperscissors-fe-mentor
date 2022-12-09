@@ -1,4 +1,5 @@
 import Header from "./components/Header"
+import PlayArea from "./components/PlayArea"
 import styles from "./style"
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
           className={`${styles.boxWidth} h-screen ${styles.paddingY} grid grid-rows-[1fr_4fr_1fr] gap-12`}
         >
           <Header />
-          <Header />
+          <PlayArea />
           <Header />
         </div>
       </div>
