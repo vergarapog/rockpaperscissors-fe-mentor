@@ -14,6 +14,12 @@ module.exports = {
         darkText: "hsl(229, 25%, 31%)",
         scoreText: "hsl(229, 64%, 46%)",
         headerOutline: "hsl(217, 16%, 45%)",
+        scissorsGradient1: "hsl(40, 84%, 53%)",
+        scissorsGradient2: "hsl(39, 89%, 49%)",
+        paperGradient1: "hsl(230, 89%, 65%)",
+        paperGradient2: " hsl(230, 89%, 62%)",
+        rockGradient1: "hsl(349, 70%, 56%)",
+        rockGradient2: "hsl(349, 71%, 52%)",
       },
       fontFamily: {
         barlow: ["Barlow Semi Condensed", "sans-serif"],
