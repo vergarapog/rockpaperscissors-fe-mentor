@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import PlayArea from "./components/PlayArea"
+import Rules from "./components/Rules"
 import styles from "./style"
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         >
           <Header />
           <PlayArea />
+          <Rules />
         </div>
       </div>
     </div>
