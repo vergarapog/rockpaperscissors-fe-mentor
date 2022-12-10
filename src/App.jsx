@@ -3,7 +3,15 @@ import PlayArea from "./components/PlayArea"
 import Rules from "./components/Rules"
 import styles from "./style"
 
+import { useGlobalContext } from "./context"
+
 function App() {
+  const { isRulesOpen } = useGlobalContext()
+
+  if (isRulesOpen) {
+    return <section className="w-full h-screen bg-white">test</section>
+  }
+
   return (
     <div className="bg-gradient-radial from-bgGradientLeft to-bgGradientRight h-full">
       <div className={`${styles.paddingX} ${styles.flexCenter} `}>
