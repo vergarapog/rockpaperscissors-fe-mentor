@@ -11,7 +11,6 @@ function App() {
         >
           <Header />
           <PlayArea />
-          <Header />
         </div>
       </div>
     </div>

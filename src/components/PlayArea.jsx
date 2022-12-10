@@ -9,7 +9,7 @@ import PlayIcon from "./PlayIcon"
 
 const PlayArea = () => {
   return (
-    <section className="border-headerOutline border-4 rounded">
+    <section className="">
       <div className="h-full flex justify-center items-center">
         <div className="relative">
           <img src={bgTriangle} className="w-56" />
