@@ -21,11 +21,13 @@ const RuleDisplay = () => {
           <div className={`${styles.flexCenter}`}>
             <img src={imageRules} alt="" />
           </div>
-          <div
-            className="flex justify-center items-center font-barlow text-4xl"
-            onClick={() => setisRulesOpen(false)}
-          >
-            <img src={iconClose} className="w-8 h-8" alt="" />
+          <div className="flex justify-center items-center font-barlow text-4xl">
+            <img
+              src={iconClose}
+              className="w-8 h-8"
+              alt=""
+              onClick={() => setisRulesOpen(false)}
+            />
           </div>
         </div>
       </div>
