@@ -4,7 +4,7 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [isRulesOpen, setisRulesOpen] = useState(false)
-  const [score, setScore] = useState("11")
+  const [score, setScore] = useState(0)
 
   return (
     <AppContext.Provider
