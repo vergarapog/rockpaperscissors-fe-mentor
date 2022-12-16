@@ -19,19 +19,6 @@ const PlayArea = () => {
     setIsEntranceMode,
   } = useGlobalContext()
 
-  useEffect(() => {
-    let timeout = null
-    if (isEntranceMode) {
-      timeout = setTimeout(() => {
-        setIsEntranceMode(false)
-      }, 1000)
-    }
-
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [isEntranceMode])
-
   const goToPhaseOne = () => {
     setPhase((prev) => "one")
     setIsEntranceMode(true)
