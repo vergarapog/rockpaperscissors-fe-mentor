@@ -22,7 +22,7 @@ const PlayIcon = ({ icon, coordinates, gradient, goToPhase, entranceMode }) => {
     <div
       className={`absolute ${coordinates} w-28 h-28 bg-white rounded-full flex justify-center items-center 
       ${entranceMode ? "" : "shadow-[inset_0_-0.4rem_rgba(0,0,0,0.2)]"} 
-      ${entranceMode ? "" : "bg-gradient-to-b"} 
+      ${entranceMode ? "opacity-0" : "bg-gradient-to-b opacity-100"} 
       ${gradient}  transition-all duration-500`}
       onClick={goToPhase}
     >
