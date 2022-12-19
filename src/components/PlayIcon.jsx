@@ -8,7 +8,6 @@ const PlayIcon = ({ icon, coordinates, gradient, goToPhase, entranceMode }) => {
   useEffect(() => {
     let timeout = null
     if (entranceMode && phase === "two") {
-      console.log("hotdog")
       timeout = setTimeout(() => {
         setIsEntranceMode(false)
       }, 1000)

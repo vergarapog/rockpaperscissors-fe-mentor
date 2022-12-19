@@ -10,14 +10,8 @@ import PlayIcon from "./PlayIcon"
 import { useGlobalContext } from "../context"
 
 const PlayArea = () => {
-  const {
-    score,
-    setScore,
-    phase,
-    setPhase,
-    isEntranceMode,
-    setIsEntranceMode,
-  } = useGlobalContext()
+  const { phase, setPhase, isEntranceMode, setIsEntranceMode } =
+    useGlobalContext()
 
   const goToPhaseOne = () => {
     setPhase((prev) => "one")
@@ -63,7 +57,7 @@ const PlayArea = () => {
           phase === "two" ? "opacity-100" : "hidden"
         }  h-full flex justify-center items-center`}
       >
-        <div className="relative w-64 h-52">
+        <div className="relative w-64 h-52 ">
           <PlayIcon
             icon={iconPaper}
             coordinates="-top-7 -left-5"
@@ -77,6 +71,16 @@ const PlayArea = () => {
             goToPhase={goToPhaseOne}
             entranceMode={isEntranceMode}
           />
+          <div className="absolute top-1/2 -left-2  text-white font-barlow uppercase tracking-widest">
+            You picked
+          </div>
+          <div
+            className={`absolute top-1/2 -right-9 text-white font-barlow uppercase tracking-widest ${
+              isEntranceMode ? "opacity-0" : "opacity-100"
+            } transition-all duration-700`}
+          >
+            The House picked
+          </div>
         </div>
       </div>
     </section>
