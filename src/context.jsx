@@ -3,10 +3,14 @@ import React, { useState, useContext } from "react"
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
+  //UI
   const [isRulesOpen, setisRulesOpen] = useState(false)
+  const [isEntranceMode, setIsEntranceMode] = useState(true)
+
+  //GAME
   const [score, setScore] = useState(0)
   const [phase, setPhase] = useState("one")
-  const [isEntranceMode, setIsEntranceMode] = useState(true)
+  const [playerChoice, setPlayerChoice] = useState({ choice: "", gradient: "" })
 
   return (
     <AppContext.Provider
@@ -19,6 +23,8 @@ const AppProvider = ({ children }) => {
         setPhase,
         isEntranceMode,
         setIsEntranceMode,
+        playerChoice,
+        setPlayerChoice,
       }} // provide states to be provided to the app
     >
       {children}
