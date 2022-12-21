@@ -1,0 +1,119 @@
+[33mcommit 12d3b4745bb97e9dd4fa66730092b68e1fef2bdc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Tue Dec 20 20:52:59 2022 +0800
+
+    fe: added ui for you win/you fail, added try again button
+
+[33mcommit c87a7f4034d70a0d7f490c2d8d17697aefc8e509[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Mon Dec 19 21:54:55 2022 +0800
+
+    finished: player choice logic and fe
+
+[33mcommit b7d7dbba0f1de3266205133b6a035930a619066f[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Mon Dec 19 08:37:04 2022 +0800
+
+    fixed: fe - styling of phase 2 text
+
+[33mcommit 1c24c9f52b8077ac1a11718181990c871a3dd0e6[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sun Dec 18 13:15:51 2022 +0800
+
+    added: opacity animation for smoother play icon fade in on computer choice
+
+[33mcommit 05ce03a90dbdf0e90132dc38d85f80715fc193ee[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Fri Dec 16 16:08:54 2022 +0800
+
+    added: finished logic for animations for phase two
+
+[33mcommit 0651b1f2dfa4e68642f7add3f6028e35b6af531d[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Thu Dec 15 21:48:50 2022 +0800
+
+    early prototyping on main game mechanics
+
+[33mcommit 71bd9ce5c36481c88e51d78a6eb5d096f15cf55b[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Tue Dec 13 22:39:55 2022 +0800
+
+    added onclick events on play icons for testing
+
+[33mcommit e390eafc7fc9ef860e60f4195d0cf9bb1871f565[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Mon Dec 12 17:46:58 2022 +0800
+
+    fix: fixed issue where the whole width beside X icon in rule display can close the popup
+
+[33mcommit 86515881fda09bbb3674dd8cd159aa9750cd0d31[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 20:50:02 2022 +0800
+
+    finished: rules and rule display feature complete
+
+[33mcommit dffcd26a57c3e0d7b84633ad3680944ad90551f3[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 20:32:24 2022 +0800
+
+    added: useContext for rules popup
+
+[33mcommit 1e1492453c2978c06d1e8f939125bdebe7d4a44a[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 20:11:14 2022 +0800
+
+    finished: rules button component finished fe
+
+[33mcommit 51724b35fc8514c6485d5e6a3924a3fcd62dab06[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 20:11:01 2022 +0800
+
+    finished: rules button component finished fe
+
+[33mcommit a30322e1e55a1a3d5917e50b9a73621dd12d1729[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 19:41:19 2022 +0800
+
+    finished: play area FE
+
+[33mcommit aad4f355f456acb97d39fd11e9a6a52ee3d8b8f9[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 19:39:13 2022 +0800
+
+    added: inset shadows to Play Icons
+
+[33mcommit b1a32f23cab5228b48163143d03341e41a99aa0e[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Sat Dec 10 19:20:32 2022 +0800
+
+    configured reusable components of Play Icons
+
+[33mcommit fc23d5dd97775217434f3b35169d6553cba62503[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Fri Dec 9 15:52:05 2022 +0800
+
+    feature: playarea 40% complete fe
+
+[33mcommit fdbae540987f6e80e067570fa34e1f1f3b1f6a88[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Fri Dec 9 14:47:31 2022 +0800
+
+    finished: header styling
+
+[33mcommit ac5679c52deb836b5d95ca84c86e666e10d55213[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Thu Dec 8 21:56:42 2022 +0800
+
+    added: barlow font
+
+[33mcommit c5c38fad4e1566e64ed56773125dcb4f7c615cf0[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Thu Dec 8 16:44:16 2022 +0800
+
+    applied gradient bg, initial layout with grid
+
+[33mcommit 743bc0320f8f9c13a94f6eff404e1b31b79a1e58[m
+Author: vergarapog <201801166@iacademy.edu.ph>
+Date:   Wed Dec 7 09:09:21 2022 +0800
+
+    initial

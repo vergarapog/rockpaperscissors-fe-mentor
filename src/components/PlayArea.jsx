@@ -9,6 +9,25 @@ import PlayIcon from "./PlayIcon"
 
 import { useGlobalContext } from "../context"
 
+const gameChoices = {
+  paper: {
+    iconPath: iconPaper,
+    gradient: "from-paperGradient1 to-paperGradient2",
+  },
+  rock: {
+    iconPath: iconRock,
+    gradient: "from-rockGradient1 to-rockGradient2",
+  },
+  scissors: {
+    iconPath: iconScissor,
+    gradient: "from-scissorsGradient1 to-scissorsGradient2",
+  },
+}
+
+const generateHouseChoice = () => {
+  return Math.floor(Math.random() * 3)
+}
+
 const PlayArea = () => {
   const {
     phase,
@@ -17,6 +36,8 @@ const PlayArea = () => {
     setIsEntranceMode,
     playerChoice,
     setPlayerChoice,
+    houseChoice,
+    setHouseChoice,
   } = useGlobalContext()
 
   const goToPhaseOne = () => {
@@ -24,27 +45,27 @@ const PlayArea = () => {
     setIsEntranceMode(true)
   }
 
-  const handlePlayerChoice = (choice, gradient) => {
-    setPlayerChoice({ choice, gradient })
-    // go to phase two
+  const handlePlayerChoice = (choice) => {
+    setPlayerChoice(choice)
     setPhase((prev) => "two")
+    setHouseChoice(generateHouseChoice())
   }
 
   let playerIconPath
   let playerIconGradient
-  switch (playerChoice.choice) {
+  switch (playerChoice) {
     case "paper":
       playerIconPath = iconPaper
-      playerIconGradient = playerChoice.gradient
+      playerIconGradient = gameChoices.paper.gradient
       break
     case "rock":
       playerIconPath = iconRock
-      playerIconGradient = playerChoice.gradient
+      playerIconGradient = gameChoices.rock.gradient
 
       break
     case "scissor":
       playerIconPath = iconScissor
-      playerIconGradient = playerChoice.gradient
+      playerIconGradient = gameChoices.scissors.gradient
       break
     default:
       playerIconPath = null
@@ -59,45 +80,27 @@ const PlayArea = () => {
       >
         <div className="relative">
           <img src={bgTriangle} className="w-56" />
-          <div
-            onClick={() =>
-              handlePlayerChoice(
-                "paper",
-                "from-paperGradient1 to-paperGradient2"
-              )
-            }
-          >
+          <div onClick={() => handlePlayerChoice("paper")}>
             <PlayIcon
               icon={iconPaper}
               coordinates="-top-7 -left-5"
-              gradient="from-paperGradient1 to-paperGradient2"
+              gradient={gameChoices.paper.gradient}
             />
           </div>
 
-          <div
-            onClick={() =>
-              handlePlayerChoice("rock", "from-rockGradient1 to-rockGradient2")
-            }
-          >
+          <div onClick={() => handlePlayerChoice("rock")}>
             <PlayIcon
               icon={iconRock}
               coordinates="-bottom-7 left-1/2 -translate-x-1/2"
-              gradient="from-rockGradient1 to-rockGradient2"
+              gradient={gameChoices.rock.gradient}
             />
           </div>
 
-          <div
-            onClick={() =>
-              handlePlayerChoice(
-                "scissor",
-                "from-scissorsGradient1 to-scissorsGradient2"
-              )
-            }
-          >
+          <div onClick={() => handlePlayerChoice("scissor")}>
             <PlayIcon
               icon={iconScissor}
               coordinates="-top-7 -right-5"
-              gradient="from-scissorsGradient1 to-scissorsGradient2"
+              gradient={gameChoices.scissors.gradient}
             />
           </div>
         </div>
@@ -126,7 +129,7 @@ const PlayArea = () => {
           <div
             className={`absolute top-1/2 -right-9 text-white font-barlow uppercase tracking-widest ${
               isEntranceMode ? "opacity-0" : "opacity-100"
-            } transition-all duration-700`}
+            } transition-all `}
           >
             The House picked
           </div>
@@ -134,7 +137,7 @@ const PlayArea = () => {
           <div
             className={`absolute -bottom-32 left-1/2 -translate-x-1/2 space-y-4 text-white font-barlow uppercase tracking-wider ${
               isEntranceMode ? "opacity-0" : "opacity-100"
-            } transition-all duration-700`}
+            } transition-all duration-[2000ms]`}
           >
             <div className="text-6xl whitespace-nowrap ">You win</div>
             <div

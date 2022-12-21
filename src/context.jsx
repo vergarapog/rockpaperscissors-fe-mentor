@@ -11,6 +11,7 @@ const AppProvider = ({ children }) => {
   const [score, setScore] = useState(0)
   const [phase, setPhase] = useState("one")
   const [playerChoice, setPlayerChoice] = useState({ choice: "", gradient: "" })
+  const [houseChoice, setHouseChoice] = useState({ choice: "", gradient: "" })
 
   return (
     <AppContext.Provider
@@ -25,6 +26,8 @@ const AppProvider = ({ children }) => {
         setIsEntranceMode,
         playerChoice,
         setPlayerChoice,
+        houseChoice,
+        setHouseChoice,
       }} // provide states to be provided to the app
     >
       {children}
