@@ -25,7 +25,18 @@ const gameChoices = {
 }
 
 const generateHouseChoice = () => {
-  return Math.floor(Math.random() * 3)
+  const randomNum = Math.floor(Math.random() * 3)
+
+  switch (randomNum) {
+    case 0:
+      return "paper"
+
+    case 1:
+      return "rock"
+
+    case 2:
+      return "scissor"
+  }
 }
 
 const PlayArea = () => {
@@ -36,8 +47,8 @@ const PlayArea = () => {
     setIsEntranceMode,
     playerChoice,
     setPlayerChoice,
-    houseChoice,
-    setHouseChoice,
+    // houseChoice,
+    // setHouseChoice,
   } = useGlobalContext()
 
   const goToPhaseOne = () => {
@@ -48,7 +59,7 @@ const PlayArea = () => {
   const handlePlayerChoice = (choice) => {
     setPlayerChoice(choice)
     setPhase((prev) => "two")
-    setHouseChoice(generateHouseChoice())
+    // setHouseChoice(generateHouseChoice())
   }
 
   let playerIconPath
@@ -69,6 +80,27 @@ const PlayArea = () => {
       break
     default:
       playerIconPath = null
+  }
+
+  let houseIconPath
+  let houseIconGradient
+
+  let houseChoice = generateHouseChoice()
+  switch (houseChoice) {
+    case "paper":
+      houseIconPath = iconPaper
+      houseIconGradient = gameChoices.paper.gradient
+      break
+    case "rock":
+      houseIconPath = iconRock
+      houseIconGradient = gameChoices.rock.gradient
+      break
+    case "scissor":
+      houseIconPath = iconScissor
+      houseIconGradient = gameChoices.scissors.gradient
+      break
+    default:
+      houseIconPath = null
   }
 
   return (
@@ -118,9 +150,9 @@ const PlayArea = () => {
             gradient={playerIconGradient}
           />
           <PlayIcon
-            icon={iconScissor}
+            icon={houseIconPath}
             coordinates="-top-7 -right-5"
-            gradient="from-scissorsGradient1 to-scissorsGradient2"
+            gradient={houseIconGradient}
             entranceMode={isEntranceMode}
           />
           <div className="absolute top-1/2 -left-2  text-white font-barlow uppercase tracking-widest">
@@ -129,7 +161,7 @@ const PlayArea = () => {
           <div
             className={`absolute top-1/2 -right-9 text-white font-barlow uppercase tracking-widest ${
               isEntranceMode ? "opacity-0" : "opacity-100"
-            } transition-all `}
+            } transition-all duration-200`}
           >
             The House picked
           </div>
@@ -137,7 +169,7 @@ const PlayArea = () => {
           <div
             className={`absolute -bottom-32 left-1/2 -translate-x-1/2 space-y-4 text-white font-barlow uppercase tracking-wider ${
               isEntranceMode ? "opacity-0" : "opacity-100"
-            } transition-all duration-[2000ms]`}
+            } transition-all duration-[1500ms]`}
           >
             <div className="text-6xl whitespace-nowrap ">You win</div>
             <div
