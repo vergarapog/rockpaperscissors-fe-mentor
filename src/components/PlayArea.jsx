@@ -39,6 +39,30 @@ const generateHouseChoice = () => {
   }
 }
 
+const determineIcon = (choice) => {
+  let path
+  let gradient
+  switch (choice) {
+    case "paper":
+      path = iconPaper
+      gradient = gameChoices.paper.gradient
+      break
+    case "rock":
+      path = iconRock
+      gradient = gameChoices.rock.gradient
+
+      break
+    case "scissor":
+      path = iconScissor
+      gradient = gameChoices.scissors.gradient
+      break
+    default:
+      path = null
+  }
+
+  return { path, gradient }
+}
+
 const PlayArea = () => {
   const {
     phase,
@@ -47,8 +71,8 @@ const PlayArea = () => {
     setIsEntranceMode,
     playerChoice,
     setPlayerChoice,
-    // houseChoice,
-    // setHouseChoice,
+    houseChoice,
+    setHouseChoice,
   } = useGlobalContext()
 
   const goToPhaseOne = () => {
@@ -59,49 +83,11 @@ const PlayArea = () => {
   const handlePlayerChoice = (choice) => {
     setPlayerChoice(choice)
     setPhase((prev) => "two")
-    // setHouseChoice(generateHouseChoice())
+    setHouseChoice(generateHouseChoice())
   }
 
-  let playerIconPath
-  let playerIconGradient
-  switch (playerChoice) {
-    case "paper":
-      playerIconPath = iconPaper
-      playerIconGradient = gameChoices.paper.gradient
-      break
-    case "rock":
-      playerIconPath = iconRock
-      playerIconGradient = gameChoices.rock.gradient
-
-      break
-    case "scissor":
-      playerIconPath = iconScissor
-      playerIconGradient = gameChoices.scissors.gradient
-      break
-    default:
-      playerIconPath = null
-  }
-
-  let houseIconPath
-  let houseIconGradient
-
-  let houseChoice = generateHouseChoice()
-  switch (houseChoice) {
-    case "paper":
-      houseIconPath = iconPaper
-      houseIconGradient = gameChoices.paper.gradient
-      break
-    case "rock":
-      houseIconPath = iconRock
-      houseIconGradient = gameChoices.rock.gradient
-      break
-    case "scissor":
-      houseIconPath = iconScissor
-      houseIconGradient = gameChoices.scissors.gradient
-      break
-    default:
-      houseIconPath = null
-  }
+  const playerIcon = determineIcon(playerChoice)
+  const houseIcon = determineIcon(houseChoice)
 
   return (
     <section className="relative">
@@ -145,14 +131,14 @@ const PlayArea = () => {
       >
         <div className="relative w-64 h-52">
           <PlayIcon
-            icon={playerIconPath}
+            icon={playerIcon.path}
             coordinates="-top-7 -left-5"
-            gradient={playerIconGradient}
+            gradient={playerIcon.gradient}
           />
           <PlayIcon
-            icon={houseIconPath}
+            icon={houseIcon.path}
             coordinates="-top-7 -right-5"
-            gradient={houseIconGradient}
+            gradient={houseIcon.gradient}
             entranceMode={isEntranceMode}
           />
           <div className="absolute top-1/2 -left-2  text-white font-barlow uppercase tracking-widest">
