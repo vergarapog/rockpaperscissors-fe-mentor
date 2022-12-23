@@ -63,6 +63,35 @@ const determineIcon = (choice) => {
   return { path, gradient }
 }
 
+const determineWinner = (playerChoice, houseChoice) => {
+  if (playerChoice === houseChoice) {
+    return "tie"
+  }
+
+  switch (playerChoice) {
+    case "paper":
+      if (houseChoice === "rock") {
+        return "player"
+      } else if (houseChoice === "scissor") {
+        return "house"
+      }
+
+    case "rock":
+      if (houseChoice === "paper") {
+        return "house"
+      } else if (houseChoice === "scissor") {
+        return "player"
+      }
+
+    case "scissor":
+      if (houseChoice === "rock") {
+        return "house"
+      } else if (houseChoice === "paper") {
+        return "player"
+      }
+  }
+}
+
 const PlayArea = () => {
   const {
     phase,
@@ -88,6 +117,14 @@ const PlayArea = () => {
 
   const playerIcon = determineIcon(playerChoice)
   const houseIcon = determineIcon(houseChoice)
+  const winner = determineWinner(playerChoice, houseChoice)
+
+  let announcementText
+  if (winner === "tie") {
+    announcementText = "Draw"
+  } else {
+    announcementText = winner === "player" ? "You Win" : "You Lose"
+  }
 
   return (
     <section className="relative">
@@ -157,7 +194,9 @@ const PlayArea = () => {
               isEntranceMode ? "opacity-0" : "opacity-100"
             } transition-all duration-[1500ms]`}
           >
-            <div className="text-6xl whitespace-nowrap ">You win</div>
+            <div className="text-6xl whitespace-nowrap ">
+              {announcementText}
+            </div>
             <div
               className="w-full bg-white text-black text-center py-2 rounded"
               onClick={goToPhaseOne}
