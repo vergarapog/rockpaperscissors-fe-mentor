@@ -94,6 +94,8 @@ const determineWinner = (playerChoice, houseChoice) => {
 
 const PlayArea = () => {
   const {
+    score,
+    setScore,
     phase,
     setPhase,
     isEntranceMode,
@@ -118,6 +120,20 @@ const PlayArea = () => {
   const playerIcon = determineIcon(playerChoice)
   const houseIcon = determineIcon(houseChoice)
   const winner = determineWinner(playerChoice, houseChoice)
+
+  useEffect(() => {
+    if (phase === "two") {
+      if (winner === "player") {
+        setScore(score + 1)
+      } else if (winner === "house") {
+        if (score === 0) {
+          setScore(0)
+        } else {
+          setScore(score - 1)
+        }
+      }
+    }
+  }, [phase])
 
   let announcementText
   if (winner === "tie") {
