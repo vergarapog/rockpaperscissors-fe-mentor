@@ -10,7 +10,7 @@ const RuleDisplay = () => {
   const { setisRulesOpen } = useGlobalContext()
 
   return (
-    <div className="bg-white h-full z-40">
+    <div className="absolute bg-white h-screen w-full z-40">
       <div className={`${styles.paddingX} ${styles.flexCenter} `}>
         <div
           className={`${styles.boxWidth} h-screen ${styles.paddingY} grid grid-rows-[1fr_4fr_1fr] gap-12`}
