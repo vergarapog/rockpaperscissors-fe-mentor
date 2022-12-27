@@ -17,7 +17,11 @@ function App() {
           <div
             className={`${styles.boxWidth} h-screen ${styles.paddingY} grid grid-rows-[1fr_4fr_1fr] gap-12`}
           >
-            <Header />
+            <div className="lg:flex lg:justify-center">
+              <div className="w-full lg:max-w-2xl">
+                <Header />
+              </div>
+            </div>
             <PlayArea />
             <Rules />
           </div>

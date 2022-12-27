@@ -6,7 +6,7 @@ import { useGlobalContext } from "../context"
 const Header = () => {
   const { score } = useGlobalContext()
   return (
-    <section className="border-headerOutline border-4 rounded">
+    <section className="border-headerOutline border-4 rounded lg:rounded-2xl">
       <div className="h-full flex justify-between items-center p-4">
         <div>
           <img src={logo} className="w-24" alt="" />

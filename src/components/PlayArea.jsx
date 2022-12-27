@@ -150,7 +150,7 @@ const PlayArea = () => {
         }  h-full flex justify-center items-center transition`}
       >
         <div className="relative">
-          <img src={bgTriangle} className="w-56" />
+          <img src={bgTriangle} className="w-56 lg:w-72" />
           <div onClick={() => handlePlayerChoice("paper")}>
             <PlayIcon
               icon={iconPaper}
