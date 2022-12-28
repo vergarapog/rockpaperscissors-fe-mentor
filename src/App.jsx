@@ -15,7 +15,7 @@ function App() {
       <div className="bg-gradient-radial from-bgGradientLeft to-bgGradientRight h-full">
         <div className={`${styles.paddingX} ${styles.flexCenter} `}>
           <div
-            className={`${styles.boxWidth} h-screen ${styles.paddingY} grid grid-rows-[1fr_4fr_1fr] gap-12`}
+            className={`${styles.boxWidth} h-screen ${styles.paddingY} grid gap-12 grid-rows-[1fr_4fr_1fr] lg:grid-rows-[1fr_5fr]`}
           >
             <div className="lg:flex lg:justify-center">
               <div className="w-full lg:max-w-2xl">

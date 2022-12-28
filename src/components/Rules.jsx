@@ -6,7 +6,7 @@ const Rules = () => {
 
   return (
     <section
-      className="flex justify-center items-center"
+      className="flex justify-center items-center lg:absolute lg:bottom-10 lg:right-14"
       onClick={() => setisRulesOpen(true)}
     >
       <div className="border-gray-400 border-2 py-3 px-8 rounded-xl">
