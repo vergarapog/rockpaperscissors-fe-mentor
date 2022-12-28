@@ -150,11 +150,11 @@ const PlayArea = () => {
         }  h-full flex justify-center items-center transition`}
       >
         <div className="relative">
-          <img src={bgTriangle} className="w-56 lg:w-72" />
+          <img src={bgTriangle} className="w-56 lg:w-64" />
           <div onClick={() => handlePlayerChoice("paper")}>
             <PlayIcon
               icon={iconPaper}
-              coordinates="-top-7 -left-5"
+              coordinates="-top-7 lg:-top-12 -left-5 lg:-left-10"
               gradient={gameChoices.paper.gradient}
             />
           </div>
@@ -162,7 +162,7 @@ const PlayArea = () => {
           <div onClick={() => handlePlayerChoice("rock")}>
             <PlayIcon
               icon={iconRock}
-              coordinates="-bottom-7 left-1/2 -translate-x-1/2"
+              coordinates="-bottom-7 lg:-bottom-12 left-1/2 -translate-x-1/2"
               gradient={gameChoices.rock.gradient}
             />
           </div>
@@ -170,7 +170,7 @@ const PlayArea = () => {
           <div onClick={() => handlePlayerChoice("scissor")}>
             <PlayIcon
               icon={iconScissor}
-              coordinates="-top-7 -right-5"
+              coordinates="-top-7 lg:-top-12 -right-5 lg:-right-10"
               gradient={gameChoices.scissors.gradient}
             />
           </div>
