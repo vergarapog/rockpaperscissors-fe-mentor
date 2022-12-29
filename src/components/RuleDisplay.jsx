@@ -19,7 +19,7 @@ const RuleDisplay = () => {
             RULES
           </div>
           <div className={`${styles.flexCenter}`}>
-            <img src={imageRules} alt="" />
+            <img src={imageRules} alt="" className="lg:w-96" />
           </div>
           <div className="flex justify-center items-center font-barlow text-4xl">
             <img
