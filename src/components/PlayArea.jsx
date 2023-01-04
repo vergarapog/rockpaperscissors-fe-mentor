@@ -177,12 +177,13 @@ const PlayArea = () => {
         </div>
       </div>
 
+      {/*//////// PHASE 2 ui code  ////////*/}
       <div
         className={`${
           phase === "two" ? "opacity-100" : "hidden"
         }  h-full flex justify-center items-center`}
       >
-        <div className="relative w-64 h-52">
+        <div className="relative w-64 lg:w-[550px] h-52">
           <PlayIcon
             icon={playerIcon.path}
             coordinates="-top-7 -left-5"
@@ -194,11 +195,11 @@ const PlayArea = () => {
             gradient={houseIcon.gradient}
             entranceMode={isEntranceMode}
           />
-          <div className="absolute top-1/2 -left-2  text-white font-barlow uppercase tracking-widest">
+          <div className="absolute top-1/2 lg:-top-1/2 -left-2  text-white font-barlow uppercase tracking-widest">
             You picked
           </div>
           <div
-            className={`absolute top-1/2 -right-9 text-white font-barlow uppercase tracking-widest ${
+            className={`absolute top-1/2 lg:-top-1/2 -right-9 text-white font-barlow uppercase tracking-widest ${
               isEntranceMode ? "opacity-0" : "opacity-100"
             } transition-all duration-200`}
           >
