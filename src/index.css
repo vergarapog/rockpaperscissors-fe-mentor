@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.player-shadow {
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.04),
+    0 0 0 50px rgba(255, 255, 255, 0.03), 0 0 0 90px rgba(255, 255, 255, 0.02);
+}
