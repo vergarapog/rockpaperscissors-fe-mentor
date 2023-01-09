@@ -10,13 +10,14 @@ const PlayIcon = ({ icon, coordinates, gradient, entranceMode, isPlayer }) => {
     if (entranceMode && phase === "two") {
       timeout = setTimeout(() => {
         setIsEntranceMode(false)
-      }, 1000)
+      }, 400)
     }
 
     return () => {
       clearTimeout(timeout)
     }
   }, [phase])
+
   return (
     <div>
       {/* <div
