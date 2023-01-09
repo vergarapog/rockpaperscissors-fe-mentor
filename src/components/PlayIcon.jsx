@@ -18,6 +18,9 @@ const PlayIcon = ({ icon, coordinates, gradient, entranceMode, isPlayer }) => {
     }
   }, [phase])
 
+  console.log("player: ", isPlayer)
+  console.log("entranceMode: ", entranceMode)
+
   return (
     <div>
       {/* <div
@@ -31,7 +34,7 @@ const PlayIcon = ({ icon, coordinates, gradient, entranceMode, isPlayer }) => {
       ${entranceMode ? "" : "shadow-[inset_0_-0.4rem_rgba(0,0,0,0.2)]"} 
       ${entranceMode ? "opacity-0" : "bg-gradient-to-b opacity-100"} 
       ${gradient}  transition-all duration-500
-      ${isPlayer ? "player-shadow" : ""}`}
+      ${isPlayer && entranceMode === false ? "player-shadow" : ""}`}
       >
         <div
           className={`bg-white w-[5.5rem] h-[5.5rem] lg:w-[8rem] lg:h-[8rem] ${

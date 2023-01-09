@@ -188,6 +188,7 @@ const PlayArea = () => {
             icon={playerIcon.path}
             coordinates="-top-7 -left-5"
             gradient={playerIcon.gradient}
+            entranceMode={isEntranceMode}
             isPlayer={true}
           />
           <PlayIcon
