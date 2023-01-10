@@ -186,22 +186,30 @@ const PlayArea = () => {
         <div className="relative w-64 lg:w-[550px] h-52">
           <PlayIcon
             icon={playerIcon.path}
-            coordinates="-top-7 -left-5"
+            coordinates={`${
+              isEntranceMode
+                ? "-top-7 -left-5"
+                : "-top-7 -left-5 lg:-top-7 lg:-left-36"
+            }`}
             gradient={playerIcon.gradient}
             entranceMode={isEntranceMode}
             isPlayer={true}
           />
           <PlayIcon
             icon={houseIcon.path}
-            coordinates="-top-7 -right-5"
+            coordinates={`${
+              isEntranceMode
+                ? "-top-7 -left-5"
+                : "-top-7 -right-5 lg:-top-7 lg:-right-36"
+            }`}
             gradient={houseIcon.gradient}
             entranceMode={isEntranceMode}
           />
-          <div className="absolute top-1/2 lg:-top-1/2 -left-2  text-white font-barlow uppercase tracking-widest">
+          <div className="absolute top-1/2 lg:-top-1/2 -left-2  text-white font-barlow lg:text-2xl uppercase tracking-widest">
             You picked
           </div>
           <div
-            className={`absolute top-1/2 lg:-top-1/2 -right-9 text-white font-barlow uppercase tracking-widest ${
+            className={`absolute top-1/2 lg:-top-1/2 -right-9 text-white font-barlow lg:text-2xl uppercase tracking-widest ${
               isEntranceMode ? "opacity-0" : "opacity-100"
             } transition-all duration-200`}
           >
@@ -210,7 +218,7 @@ const PlayArea = () => {
 
           <div
             className={`absolute -bottom-32 left-1/2 -translate-x-1/2 space-y-4 text-white font-barlow uppercase tracking-wider ${
-              isEntranceMode ? "opacity-0" : "opacity-100"
+              isEntranceMode ? "opacity-0" : "opacity-100 lg:top-7"
             } transition-all duration-[1500ms]`}
           >
             <div className="text-6xl whitespace-nowrap ">
