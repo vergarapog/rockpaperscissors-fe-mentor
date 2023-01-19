@@ -1,14 +1,18 @@
-import { describe, expect, it } from "vitest"
 import { render, screen } from "@testing-library/react"
 
 import Header from "./Header"
-import App from "../App"
+
+import { AppProvider } from "../context"
 
 describe("#header", () => {
   it("renders header score text", async () => {
-    render(<Header />)
+    render(
+      <AppProvider>
+        <Header />
+      </AppProvider>
+    )
 
-    const scoreText = await screen.findByText("Score")
+    const scoreText = await screen.findByText("SCORE")
     expect(scoreText).toBeDefined()
   })
 })
