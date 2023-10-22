@@ -1,13 +1,13 @@
-import React from "react"
-import styles from "../style"
+import React from "react";
+import styles from "../style";
 
-import { useGlobalContext } from "../context"
+import { useGlobalContext } from "../context";
 
-import imageRules from "../assets/image-rules.svg"
-import iconClose from "../assets/icon-close.svg"
+import imageRules from "../assets/image-rules.svg";
+import iconClose from "../assets/icon-close.svg";
 
 const RuleDisplay = () => {
-  const { setisRulesOpen } = useGlobalContext()
+  const { setisRulesOpen } = useGlobalContext();
 
   return (
     <div className="absolute bg-white h-screen w-full z-40">
@@ -21,7 +21,7 @@ const RuleDisplay = () => {
           <div className={`${styles.flexCenter}`}>
             <img src={imageRules} alt="" className="lg:w-96" />
           </div>
-          <div className="flex justify-center items-center font-barlow text-4xl ">
+          <div className="flex justify-center items-center font-barlow text-4xl">
             <img
               src={iconClose}
               className="w-8 h-8 cursor-pointer"
@@ -32,7 +32,7 @@ const RuleDisplay = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RuleDisplay
+export default RuleDisplay;

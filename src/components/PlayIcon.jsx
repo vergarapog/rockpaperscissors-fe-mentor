@@ -1,25 +1,25 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 
-import { useGlobalContext } from "../context"
+import { useGlobalContext } from "../context";
 
 const PlayIcon = ({ icon, coordinates, gradient, entranceMode, isPlayer }) => {
-  const { phase, setIsEntranceMode } = useGlobalContext()
+  const { phase, setIsEntranceMode } = useGlobalContext();
 
   useEffect(() => {
-    let timeout = null
+    let timeout = null;
     if (entranceMode && phase === "two") {
       timeout = setTimeout(() => {
-        setIsEntranceMode(false)
-      }, 400)
+        setIsEntranceMode(false);
+      }, 400);
     }
 
     return () => {
-      clearTimeout(timeout)
-    }
-  }, [phase])
+      clearTimeout(timeout);
+    };
+  }, [phase]);
 
-  console.log("player: ", isPlayer)
-  console.log("entranceMode: ", entranceMode)
+  console.log("player: ", isPlayer);
+  console.log("entranceMode: ", entranceMode);
 
   return (
     <div>
@@ -30,7 +30,7 @@ const PlayIcon = ({ icon, coordinates, gradient, entranceMode, isPlayer }) => {
       <div
         className={`absolute ${coordinates} w-28 h-28 lg:w-44 lg:h-44 ${
           phase === "two" ? "lg:w-64 lg:h-64" : ""
-        } bg-white rounded-full flex justify-center items-center 
+        } bg-white rounded-full flex justify-center items-center hover:scale-110 cursor-pointer
       ${entranceMode ? "" : "shadow-[inset_0_-0.4rem_rgba(0,0,0,0.2)]"} 
       ${entranceMode ? "opacity-0" : "bg-gradient-to-b opacity-100"} 
       ${gradient}  transition-all duration-500
@@ -52,7 +52,7 @@ const PlayIcon = ({ icon, coordinates, gradient, entranceMode, isPlayer }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PlayIcon
+export default PlayIcon;

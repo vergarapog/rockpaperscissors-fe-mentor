@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 
-import bgTriangle from "../assets/bg-triangle.svg"
-import iconPaper from "../assets/icon-paper.svg"
-import iconRock from "../assets/icon-rock.svg"
-import iconScissor from "../assets/icon-scissors.svg"
+import bgTriangle from "../assets/bg-triangle.svg";
+import iconPaper from "../assets/icon-paper.svg";
+import iconRock from "../assets/icon-rock.svg";
+import iconScissor from "../assets/icon-scissors.svg";
 
-import PlayIcon from "./PlayIcon"
+import PlayIcon from "./PlayIcon";
 
-import { useGlobalContext } from "../context"
+import { useGlobalContext } from "../context";
 
 import {
   gameChoices,
   generateHouseChoice,
   determineIcon,
   determineWinner,
-} from "./GameHelperFunctions"
+} from "./GameHelperFunctions";
 
 const PlayArea = () => {
   const {
@@ -28,42 +28,42 @@ const PlayArea = () => {
     setPlayerChoice,
     houseChoice,
     setHouseChoice,
-  } = useGlobalContext()
+  } = useGlobalContext();
 
   const goToPhaseOne = () => {
-    setPhase((prev) => "one")
-    setIsEntranceMode(true)
-  }
+    setPhase((prev) => "one");
+    setIsEntranceMode(true);
+  };
 
   const handlePlayerChoice = (choice) => {
-    setPlayerChoice(choice)
-    setPhase((prev) => "two")
-    setHouseChoice(generateHouseChoice())
-  }
+    setPlayerChoice(choice);
+    setPhase((prev) => "two");
+    setHouseChoice(generateHouseChoice());
+  };
 
-  const playerIcon = determineIcon(playerChoice)
-  const houseIcon = determineIcon(houseChoice)
-  const winner = determineWinner(playerChoice, houseChoice)
+  const playerIcon = determineIcon(playerChoice);
+  const houseIcon = determineIcon(houseChoice);
+  const winner = determineWinner(playerChoice, houseChoice);
 
   useEffect(() => {
     if (phase === "two") {
       if (winner === "player") {
-        setScore(score + 1)
+        setScore(score + 1);
       } else if (winner === "house") {
         if (score === 0) {
-          setScore(0)
+          setScore(0);
         } else {
-          setScore(score - 1)
+          setScore(score - 1);
         }
       }
     }
-  }, [phase])
+  }, [phase]);
 
-  let announcementText
+  let announcementText;
   if (winner === "tie") {
-    announcementText = "Draw"
+    announcementText = "Draw";
   } else {
-    announcementText = winner === "player" ? "You Win" : "You Lose"
+    announcementText = winner === "player" ? "You Win" : "You Lose";
   }
 
   return (
@@ -149,7 +149,7 @@ const PlayArea = () => {
               {announcementText}
             </div>
             <div
-              className="w-full bg-white text-black text-center py-2 rounded"
+              className="w-full bg-white text-black text-center py-2 rounded cursor-pointer hover:scale-105 transition-all"
               onClick={goToPhaseOne}
             >
               <p>Try again</p>
@@ -158,7 +158,7 @@ const PlayArea = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PlayArea
+export default PlayArea;
