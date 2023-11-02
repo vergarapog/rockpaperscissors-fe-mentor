@@ -2,7 +2,7 @@
 
 ![Project Image](https://raw.githubusercontent.com/vergarapog/rockpaperscissors-fe-mentor/main/public/git-pic/rock-paper-scissors-sc.jpg)
 
-Challenge yourself with the Rock, Paper, Scissors. Test your luck against the computer. It was developed as part of a challenge on [Frontend Mentor](https://www.frontendmentor.io), a platform that offers real-world coding challenges to help improve your coding skills.
+Challenge yourself with the Rock, Paper, Scissors. Test your luck against the computer! It was developed as part of a challenge on [Frontend Mentor](https://www.frontendmentor.io), a platform that offers real-world coding challenges to help improve your coding skills.
 
 [Visit the live site here](https://rockpaperscissors-fe.vercel.app/)
 
